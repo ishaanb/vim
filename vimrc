@@ -1,3 +1,6 @@
+"" Ishaan's vimrc file. 
+"" Feel free to take a look, inspire or be inspired
+
 "execute pathogen#infect()
 syntax on
 set ruler
