@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/tmp/vmware-root'
+let g:netrw_dirhist_2='/home/ishaanbi/Repos/CastleCrest_IPG/fw/src/sps/ut/src/apps/nm/PTU/PtuComponent/scripts'
+let g:netrw_dirhist_3='/home/ishaanbi/.vim/bundle/Vundle.vim'
+let g:netrw_dirhist_4='/home/ishaanbi/.vim/bundle/Vundle.vim/autoload'
+let g:netrw_dirhist_5='/home/ishaanbi/.vim/bundle/Vundle.vim'
+let g:netrw_dirhist_6='/home/ishaanbi/Repos/CastleCrest_IPG/fw/src/sps/ut/src/apps/nm/PTU/PtuIfaces'
+let g:netrw_dirhist_7='/home/ishaanbi/Repos/CastleCrest_IPG/fw/src/sps/apps/nm/diag'
