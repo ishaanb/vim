@@ -1,0 +1,38 @@
+#!/bin/bash
+set -f
+
+excludePaths=()
+
+while [[ $# > 1 ]]
+do
+   case $1 in
+      -f)
+         mapfile -O "${#excludePaths[@]}" excludePaths < $2
+         shift
+         ;;
+      -x)
+         excludePaths+=("$2")
+         shift
+         ;;
+   esac
+   shift
+done
+
+if [ -n "$excludePaths" ]
+then
+   echo -e "Excluding:\n ${excludePaths[*]}"
+fi
+
+excludeArgs=""
+for path in ${excludePaths[@]}
+do
+   excludeArgs="$excludeArgs -not ( -path $path -prune )"
+done
+
+echo -n "Searching for source files..."
+find $excludeArgs -type f \( -iname '*.c' -o -iname '*.h' -o -iname '*.cpp' \) -printf '"%P"\n' > cscope.files
+echo "Done"
+
+echo -n "Indexing..."
+cscope -qb
+echo "Done"
