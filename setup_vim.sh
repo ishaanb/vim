@@ -1,5 +1,7 @@
- git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle
- cd ~/.vim/bundle/Vundle.vim/
+#!/bin/bash
 
+if [ ! -d "~/.vim" ]; then
+	echo ".vim folder exists"
+fi
 
 

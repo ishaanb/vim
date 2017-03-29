@@ -1,11 +1,16 @@
-"" Ishaan's vimrc file. 
+"" Ishaan's vimrc file.
 "" Feel free to take a look, inspire or be inspired
 
-"execute pathogen#infect()
 syntax on
 set ruler
 set nocompatible
 set hlsearch
+set backspace=indent,eol,start
+:colorscheme elflord
+
+inoremap jk <esc>
+autocmd BufWritePre  * %s/\s\+$//e  " Remove trailing whitespaces when saving a file
+
 " Set mouse mode on/off on enter
 function! MouseOn()
     nunmap <C-M>
@@ -23,18 +28,18 @@ nmap <C-M> :call MouseOn()<CR>
 
 
 set wildmenu
-set wildmode=full 
+set wildmode=full
 
 filetype on
-set nocscopeverbose	
+set nocscopeverbose
 set laststatus=2
 set ic
 set rtp+=~/.vim/bundle/Vundle.vim
-
+nnoremap <C-B> :%!xxd<CR>
 nnoremap <C-left> :tabprevious<CR>
 nnoremap <C-right> :tabnext<CR>
 ""nnoremap <F12> :wa<CR> <Bar> :!reindex-cscope -f exclude.files<CR> <Bar> :cscope reset<CR>
-nnoremap <F12> :wa<CR> <Bar> :!reindex-cscope <CR> <Bar> :cscope reset<CR>
+nnoremap <F12> :wa<CR> <Bar> :!~/.vim/reindex-cscope <CR> <Bar> :cscope reset<CR>
 nnoremap <silent> q :TlistToggle<CR>
 
 call vundle#begin()
@@ -46,9 +51,8 @@ Plugin 'VundleVim/Vundle.vim'
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 Plugin 'Valloric/YouCompleteMe'
-"Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 " " All of your Plugins must be added before the following line
 
 call vundle#end()            " required
