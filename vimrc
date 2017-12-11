@@ -41,6 +41,7 @@ nnoremap <C-right> :tabnext<CR>
 ""nnoremap <F12> :wa<CR> <Bar> :!reindex-cscope -f exclude.files<CR> <Bar> :cscope reset<CR>
 nnoremap <F12> :wa<CR> <Bar> :!~/.vim/reindex-cscope <CR> <Bar> :cscope reset<CR>
 nnoremap <silent> q :TlistToggle<CR>
+nnoremap <silent> w :NERDTreeToggle<CR>
 
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -53,8 +54,19 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
 " " All of your Plugins must be added before the following line
 
 call vundle#end()            " required
- filetype plugin indent on    " required
+filetype plugin indent on    " required
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+let g:ycm_confirm_extra_conf = 0
+
+
 
